@@ -8,6 +8,12 @@
 
 这个项目的核心想法是：把“悬空手势”变成一个容易上手、不会跑调、可录制回放的嵌入式乐器。它不是简单读取 ADC 后蜂鸣器响一下，而是完整串起了传感、滤波、音阶量化、合成器控制、显示界面、红外遥控、Flash 录音和串口 MIDI 桥接。
 
+### 项目背景
+
+本项目最初完成于一门嵌入式系统课程的期末课程设计。课程版本包含论文、演示材料、视频和提交包装；本仓库则是整理后的开源代码版本，重点保留可复现的固件、上位机辅助脚本、构建配置和必要的技术说明。
+
+开源版不包含课程提交包、个人学号信息、课程资料原件或大体积演示文件。仓库中的 `firmware/App/` 是流光琴的主要原创应用层实现，底层 HAL/BSP 文件用于让项目能在 ALIENTEK 战舰 STM32F103ZET6 V3 开发板上独立构建和运行。
+
 ### 亮点
 
 - **非接触演奏**：手掌高度改变板载光敏二极管读数，形成连续演奏输入。
@@ -132,6 +138,20 @@ python3 host_tools/serial_midi_bridge.py /dev/cu.usbserial-11130
 **LightString** is a contact-free optical musical instrument for the ALIENTEK WarShip STM32F103ZET6 V3 development board. Instead of touching keys or strings, the player moves a hand above the onboard light sensor. The firmware turns the changing light intensity into notes in a musical scale and plays them through the onboard VS1053b MIDI synthesizer.
 
 The project is designed as a complete embedded instrument rather than a simple ADC demo. It combines sensing, filtering, scale quantization, MIDI synthesis, TFTLCD feedback, IR/key controls, Flash-based melody recording, and an optional serial-to-MIDI host bridge.
+
+### Project Background
+
+This project was originally developed as the final project for an embedded
+systems course. The course submission included a report, slides, videos, and a
+submission package; this repository is the cleaned open-source code release
+focused on reproducible firmware, host-side helper scripts, build files, and
+technical documentation.
+
+The open-source version intentionally excludes course submission packages,
+student ID information, original course materials, and large presentation
+assets. The main original application logic lives in `firmware/App/`, while
+the low-level HAL/BSP files are kept so the project can be built and run on
+the ALIENTEK WarShip STM32F103ZET6 V3 board.
 
 ### Highlights
 
